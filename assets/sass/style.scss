@@ -3,10 +3,10 @@
 // ==========================================================================
 
 /*!
-Theme Name: Odin
-Author URI: http://wpod.in/
-Description: Odin main stylesheet.
-Author: the Odin team
+Theme Name: Agile Engine Branding
+Author URI: https://github.com/agencia-agile/agile-engine-branding
+Description: Agile main stylesheet.
+Author: the Agile team
 Author URI: http://wpod.in/#colaboradores
 */
 
@@ -14,7 +14,14 @@ Author URI: http://wpod.in/#colaboradores
         "variables",           // Theme       Custom Variables
         "bootstrap/bootstrap", // Bootstrap   Styles Core
         "wordpress/wordpress", // WordPress   Styles Core
-        //"woocommerce",       // WooCommerce Styles Core
+        // "woocommerce",      // WooCommerce Styles Core
         "odin/core",           // Odin        Styles Core
-        "layout"               // Theme       Custom Layout
+        "reset",               // Theme       Reset Layout
+        "theme/header",        // Theme       Custom Layout
+        "theme/home",          // Theme       Custom Layout
+        "theme/page",          // Theme       Custom Layout
+        "theme/blog",          // Theme       Custom Layout
+        "theme/blog-cards",    // Theme       Custom Layout
+        "theme/single",        // Theme       Custom Layout
+        "theme/footer"         // Theme       Custom Layout
 ;
