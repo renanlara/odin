@@ -335,7 +335,7 @@ function agile_engine_branding_errors_notice() {
 	// Advanced Custom Fields Pro
 	if ( ! is_plugin_active( 'advanced-custom-fields/acf.php' ) && ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) { ?>
 	    <div class="error notice is-dismissible">
-	        <p><a href="https://br.wordpress.org/plugins/advanced-custom-fields/" target="_blank"><?php _e( 'Advanced Custom Fields ou ACF Pro', 'my_plugin_textdomain' ); ?></a> <?php _e( 'não está instalado. Instale ou Ative o plugin por favor.', 'my_plugin_textdomain' ); ?></p>
+	        <p><a href="https://br.wordpress.org/plugins/advanced-custom-fields/" target="_blank"><?php _e( 'Advanced Custom Fields ou ACF Pro', 'odin' ); ?></a> <?php _e( 'não está instalado. Instale ou Ative o plugin por favor.', 'odin' ); ?></p>
 	    </div>
 	    <?php
 	}
@@ -343,7 +343,7 @@ function agile_engine_branding_errors_notice() {
 	// Advanced Custom Fields Pro
 	if ( ! is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) { ?>
 	    <div class="error notice is-dismissible">
-	        <p><a href="https://wordpress.org/plugins/contact-form-7/" target="_blank"><?php _e( 'Contact Form 7', 'my_plugin_textdomain' ); ?></a> <?php _e( 'não está instalado. Instale ou Ative o plugin por favor.', 'my_plugin_textdomain' ); ?></p>
+	        <p><a href="https://wordpress.org/plugins/contact-form-7/" target="_blank"><?php _e( 'Contact Form 7', 'odin' ); ?></a> <?php _e( 'não está instalado. Instale ou Ative o plugin por favor.', 'odin' ); ?></p>
 	    </div>
 	    <?php
 	}

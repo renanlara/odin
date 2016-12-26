@@ -20,11 +20,37 @@ get_header(); ?>
 					 */
 					get_template_part( 'content', get_post_format() );
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
 				endwhile;
+
+
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) : ?>
+					<section id="comments-area">
+						<div class="container">
+							<?php
+								$social_warfare = "[social_warfare]";
+
+								// The is_plugin_active() function is only included by default in the admin,
+								// load it on the front-end too if needed.
+								if ( ! function_exists('is_plugin_active') ) {
+								    include_once ABSPATH.'wp-admin/includes/plugin.php';
+								}
+								if ( ! is_plugin_active( 'social-warfare/social-warfare.php' ) ) : ?>
+									<div class="alert alert-danger" role="alert"><?php _e( 'The plugin', 'odin' ); ?> <a href="https://br.wordpress.org/plugins/social-warfare/" target="_blank"><?php _e( 'Social Warfare', 'odin' ); ?></a> <?php _e( 'not it is installed. The social media share not it will be displayed.', 'odin' ); ?></div>
+
+								<?php
+									else : ?>
+									<h3><?php _e( 'Share:', 'odin' ); ?></h3>
+									<?php echo do_shortcode( $social_warfare );
+								endif;
+							?>
+
+							<h3><?php _e( 'Leave your comment!', 'odin' ); ?></h3>
+							<?php comments_template(); ?>
+						</div><!-- .container -->
+					</section><!-- #comments-area -->
+			<?php
+				endif;
 			?>
 		</main><!-- #main -->
 
