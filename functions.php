@@ -318,3 +318,34 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
+
+/**
+ * Custom Functions for the theme of Client.
+ */
+
+
+// Alert for plugins not installeds or not actives
+function agile_engine_branding_errors_notice() {
+	// The is_plugin_active() function is only included by default in the admin,
+	// load it on the front-end too if needed.
+	if ( ! function_exists('is_plugin_active') ) {
+	    include_once ABSPATH.'wp-admin/includes/plugin.php';
+	}
+
+	// Advanced Custom Fields Pro
+	if ( ! is_plugin_active( 'advanced-custom-fields/acf.php' ) && ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) { ?>
+	    <div class="error notice is-dismissible">
+	        <p><a href="https://br.wordpress.org/plugins/advanced-custom-fields/" target="_blank"><?php _e( 'Advanced Custom Fields ou ACF Pro', 'my_plugin_textdomain' ); ?></a> <?php _e( 'não está instalado. Instale ou Ative o plugin por favor.', 'my_plugin_textdomain' ); ?></p>
+	    </div>
+	    <?php
+	}
+
+	// Advanced Custom Fields Pro
+	if ( ! is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) { ?>
+	    <div class="error notice is-dismissible">
+	        <p><a href="https://wordpress.org/plugins/contact-form-7/" target="_blank"><?php _e( 'Contact Form 7', 'my_plugin_textdomain' ); ?></a> <?php _e( 'não está instalado. Instale ou Ative o plugin por favor.', 'my_plugin_textdomain' ); ?></p>
+	    </div>
+	    <?php
+	}
+}
+add_action( 'admin_notices', 'agile_engine_branding_errors_notice' );
