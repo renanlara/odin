@@ -326,6 +326,7 @@ if ( is_woocommerce_activated() ) {
 
 // Alert for plugins not installeds or not actives
 function agile_engine_branding_errors_notice() {
+	$defaul_message_plugin_not_installed = 'não está instalado. Instale ou Ative o plugin por favor.';
 	// The is_plugin_active() function is only included by default in the admin,
 	// load it on the front-end too if needed.
 	if ( ! function_exists('is_plugin_active') ) {
@@ -335,15 +336,22 @@ function agile_engine_branding_errors_notice() {
 	// Advanced Custom Fields Pro
 	if ( ! is_plugin_active( 'advanced-custom-fields/acf.php' ) && ! is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) { ?>
 	    <div class="error notice is-dismissible">
-	        <p><a href="https://br.wordpress.org/plugins/advanced-custom-fields/" target="_blank"><?php _e( 'Advanced Custom Fields ou ACF Pro', 'odin' ); ?></a> <?php _e( 'não está instalado. Instale ou Ative o plugin por favor.', 'odin' ); ?></p>
+	        <p><a href="https://br.wordpress.org/plugins/advanced-custom-fields/" target="_blank"><?php _e( 'Advanced Custom Fields ou ACF Pro', 'odin' ); ?></a> <?php _e( $defaul_message_plugin_not_installed, 'odin' ); ?></p>
 	    </div>
 	    <?php
 	}
 
-	// Advanced Custom Fields Pro
+	// Contact Form 7
 	if ( ! is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) { ?>
 	    <div class="error notice is-dismissible">
-	        <p><a href="https://wordpress.org/plugins/contact-form-7/" target="_blank"><?php _e( 'Contact Form 7', 'odin' ); ?></a> <?php _e( 'não está instalado. Instale ou Ative o plugin por favor.', 'odin' ); ?></p>
+	        <p><a href="https://wordpress.org/plugins/contact-form-7/" target="_blank"><?php _e( 'Contact Form 7', 'odin' ); ?></a> <?php _e( $defaul_message_plugin_not_installed, 'odin' ); ?></p>
+	    </div>
+	    <?php
+	}
+
+	if ( ! is_plugin_active( 'social-warfare/social-warfare.php' ) ) { ?>
+	    <div class="error notice is-dismissible">
+	        <p><a href="https://br.wordpress.org/plugins/social-warfare/" target="_blank"><?php _e( 'Social Warfare', 'odin' ); ?></a> <?php _e( $defaul_message_plugin_not_installed, 'odin' ); ?></p>
 	    </div>
 	    <?php
 	}
