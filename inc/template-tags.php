@@ -44,7 +44,7 @@ if ( ! function_exists( 'odin_classes_page_sidebar_aside' ) ) {
 	 * @return string Classes name.
 	 */
 	function odin_classes_page_sidebar_aside() {
-		return 'col-md-3 hidden-xs hidden-print widget-area';
+		return 'col-lg-4 col-md-4 col-sm-4 hidden-xs hidden-print widget-area';
 	}
 }
 
