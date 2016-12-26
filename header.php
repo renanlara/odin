@@ -29,7 +29,7 @@
 
 	<header id="header" role="banner">
 		<div class="container">
-			<div class="page-header hidden-xs">
+			<div class="agile-engine-branding col-lg-3 col-md-3 col-sm-6 col-xs-6">
 
 				<?php odin_the_custom_logo(); ?>
 
@@ -61,18 +61,7 @@
 
 			</div><!-- .page-header-->
 
-			<div id="main-navigation" class="navbar navbar-default">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">
-					<span class="sr-only"><?php _e( 'Toggle navigation', 'odin' ); ?></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand visible-xs-block" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
-					</a>
-				</div>
+			<div id="main-navigation" class="navbar col-lg-9 col-md-9 col-sm-6 col-xs-6">
 				<nav class="collapse navbar-collapse navbar-main-navigation" role="navigation">
 					<?php
 						wp_nav_menu(
@@ -86,20 +75,10 @@
 							)
 						);
 					?>
-					<form method="get" class="navbar-form navbar-right" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-						<label for="navbar-search" class="sr-only">
-							<?php _e( 'Search:', 'odin' ); ?>
-						</label>
-						<div class="form-group">
-							<input type="search" value="<?php echo get_search_query(); ?>" class="form-control" name="s" id="navbar-search" />
-						</div>
-						<button type="submit" class="btn btn-default"><?php _e( 'Search', 'odin' ); ?></button>
-					</form>
 				</nav><!-- .navbar-collapse -->
 			</div><!-- #main-navigation-->
 
 		</div><!-- .container-->
 	</header><!-- #header -->
 
-	<div id="wrapper" class="container">
-		<div class="row">
+	<div id="wrapper">
