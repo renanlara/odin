@@ -10,6 +10,8 @@ get_header(); ?>
 
 		<main id="content" class="page-default" tabindex="-1" role="main">
 			<div class="container">
+				<?php get_template_part( 'templates/breadcrumb' ); ?>
+
 				<div class="<?php echo odin_classes_page_sidebar(); ?>">
 					<?php
 						// Start the Loop.
@@ -56,6 +58,8 @@ get_header(); ?>
 				<?php get_sidebar(); ?>
 
 			</div><!-- .container -->
+
+			<?php blog_list_posts_and_related( 'Você pode gostar também:', 3, $last_posts ); ?>
 		</main><!-- #main -->
 
 <?php

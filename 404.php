@@ -8,18 +8,23 @@
 
 get_header(); ?>
 
-	<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
+	<main id="content" class="page-default 404-template" tabindex="-1" role="main">
+		<div class="container">
+			<?php get_template_part( 'templates/breadcrumb' ); ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php _e( 'Not Found', 'odin' ); ?></h1>
-			</header>
+			<div class="<?php echo odin_classes_page_full(); ?>">
+				<header class="page-header">
+					<h1 class="page-title"><?php _e( 'Not Found', 'odin' ); ?></h1>
+				</header>
 
-			<div class="page-content">
-				<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'odin' ); ?></p>
+				<div class="page-content">
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'odin' ); ?></p>
 
-				<?php get_search_form(); ?>
-			</div><!-- .page-content -->
+					<?php get_search_form(); ?>
 
+				</div><!-- .page-content -->
+			</div><!-- .odin_classes_page_full() -->
+		</div><!-- .container -->
 	</main><!-- #main -->
 
 <?php

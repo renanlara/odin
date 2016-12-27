@@ -16,7 +16,7 @@ if ( ! function_exists( 'odin_classes_page_full' ) ) {
 	 * @return string Classes name.
 	 */
 	function odin_classes_page_full() {
-		return 'col-md-12';
+		return 'col-lg-12 col-md-12 col-sm-12 col-xs-12';
 	}
 }
 

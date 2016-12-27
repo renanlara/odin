@@ -8,38 +8,45 @@
 
 get_header(); ?>
 
-	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
-			<?php if ( have_posts() ) : ?>
+	<main id="content" class="page-default search-template" tabindex="-1" role="main">
+		<div class="container">
+			<?php get_template_part( 'templates/breadcrumb' ); ?>
 
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'odin' ), get_search_query() ); ?></h1>
-				</header><!-- .page-header -->
+			<div class="<?php echo odin_classes_page_sidebar(); ?>">
+				<?php if ( have_posts() ) : ?>
 
-					<?php
-						// Start the Loop.
-						while ( have_posts() ) : the_post();
+					<header class="page-header">
+						<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'odin' ), get_search_query() ); ?></h1>
+					</header><!-- .page-header -->
 
-							/*
-							 * Include the post format-specific template for the content. If you want to
-							 * use this in a child theme, then include a file called called content-___.php
-							 * (where ___ is the post format) and that will be used instead.
-							 */
-							get_template_part( 'content', get_post_format() );
+						<?php
+							// Start the Loop.
+							while ( have_posts() ) : the_post();
 
-						endwhile;
+								/*
+								 * Include the post format-specific template for the content. If you want to
+								 * use this in a child theme, then include a file called called content-___.php
+								 * (where ___ is the post format) and that will be used instead.
+								 */
+								get_template_part( 'content', get_post_format() );
 
-						// Post navigation.
-						odin_paging_nav();
+							endwhile;
 
-					else :
-						// If no content, include the "No posts found" template.
-						get_template_part( 'content', 'none' );
+							// Post navigation.
+							odin_paging_nav();
 
-				endif;
-			?>
+						else :
+							// If no content, include the "No posts found" template.
+							get_template_part( 'content', 'none' );
 
+					endif;
+				?>
+			</div><!-- .odin_classes_page_sidebar() -->
+
+			<?php get_sidebar(); ?>
+
+		</div><!-- .container -->
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

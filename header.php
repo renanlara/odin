@@ -61,7 +61,7 @@
 
 			</div><!-- .page-header-->
 
-			<div id="main-navigation" class="navbar col-lg-9 col-md-9 col-sm-6 col-xs-6">
+			<div id="main-navigation" class="navbar navbar-default col-lg-9 col-md-9 col-sm-6 col-xs-6">
 				<nav class="collapse navbar-collapse navbar-main-navigation" role="navigation">
 					<?php
 						wp_nav_menu(
