@@ -111,8 +111,6 @@ a {
 }
 
 #breadcrumbs {
-	text-transform: uppercase;
-
 	a {
 		color: $breadcrumbs-color;
 
@@ -123,3 +121,7 @@ a {
 	}
 }
 
+// Metas from posts
+.entry-meta {
+	margin-bottom: 10px;
+}

@@ -68,7 +68,7 @@ add_image_size( 'page-with-sidebar', 760, 450, true );
 // Replaces the excerpt "Read More" text by a link
 function new_excerpt_more($more) {
        global $post;
-	return '... <a class="excerpt_more" href="'. get_permalink($post->ID) . '">Leia Mais</a>';
+	return '...</p><p><a class="btn btn-aeb-excerpt" href="'. get_permalink($post->ID) . '">Leia Mais</a></p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -88,7 +88,7 @@ if ( ! function_exists( 'blog_list_posts_and_related' ) ) {
 	$related = array( $post->ID );
 
 	function blog_list_posts_and_related( $subtitle_section, $count_posts, $type_post ) { ?>
-		<section id="blog">
+		<section id="blog" class="blog-cards">
 			<div class="container">
 				<header class="entry-header">
 					<h2 class="section-title"><?php echo $subtitle_section; ?></h2>
@@ -119,7 +119,7 @@ if ( ! function_exists( 'blog_list_posts_and_related' ) ) {
 					<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
 						<div class="entry-post <?php echo $count_posts; ?> col-xs-12">
 							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'page-with-sidebar', array( 'class' => 'img-responsive' ) ); ?></a>
-							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></h3>' ); ?>
 							<div class="entry-meta">
 								<?php odin_posted_on(); ?>
 							</div><!-- .entry-meta -->

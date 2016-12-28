@@ -15,9 +15,6 @@ $border: #838383;
 $color: inherit;
 $background: #f1f1f1;
 
-// Anchor colors all
-$anchor: $color;
-
 // Colors for Header Mobile
 $nav-icon: $black;
 $bg-header-mobile: $border;
@@ -31,3 +28,10 @@ $form-background: $white;
 // Breadcrumbs
 $breadcrumbs-color: $color;
 $breadcrumbs-color-hover: $color;
+
+// Anchor colors all
+$anchor: #337ab7;
+
+// Buttons Colors
+$btn-aeb-excerpt-color: $white;
+$btn-aeb-excerpt-background: $black;

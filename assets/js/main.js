@@ -30,4 +30,33 @@ jQuery(document).ready(function($) {
 		$( '#header-mobile' ).removeClass( 'show-header' );
 	});
 
+	// lightSlider
+	$( '#selector' ).lightSlider({
+        item: 3,
+        loop: true,
+        auto: true,
+        slideMargin: 2,
+        pager: false,
+        controls: false,
+        enableDrag: true,
+        responsive : [
+            {
+                breakpoint: 768,
+                settings: {
+                    item: 2,
+                    slideMove: 1,
+                    slideMargin: 2
+                }
+            },
+
+            {
+                breakpoint: 480,
+                settings: {
+                    item: 1,
+                    slideMove: 1
+                }
+            }
+        ]
+    });
+
 });
