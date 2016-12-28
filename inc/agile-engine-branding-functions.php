@@ -81,7 +81,9 @@ if ( ! function_exists( 'blog_list_posts_and_related' ) ) {
 	 * @since 2.2.0
 	 *
 	 * @return string Classes name.
+	 * @param > $subtitle_section, $count_posts, $type_post
 	 */
+	// Variables
 	$last_posts = '';
 	$related = array( $post->ID );
 
@@ -89,7 +91,7 @@ if ( ! function_exists( 'blog_list_posts_and_related' ) ) {
 		<section id="blog">
 			<div class="container">
 				<header class="entry-header">
-					<h3 class="entry-subtitle"><?php echo $subtitle_section; ?></h3>
+					<h2 class="section-title"><?php echo $subtitle_section; ?></h2>
 				</header>
 
 				<?php
@@ -100,15 +102,27 @@ if ( ! function_exists( 'blog_list_posts_and_related' ) ) {
 						'post__not_in' => $type_post
 						)
 					);
+
+					if ($count_posts == 1 ) {
+						$count_posts = 'col-lg-12 col-md-12 col-sm-12';
+
+					} elseif ($count_posts == 2) {
+						$count_posts = 'col-lg-6 col-md-6 col-sm-6';
+					} elseif ($count_posts == 3) {
+						$count_posts = 'col-lg-4 col-md-4 col-sm-4';
+					} elseif ($count_posts < 3) {
+						$count_posts = 'col-lg-4 col-md-4 col-sm-4';
+					}
+
 				?>
 				<?php if ( $blog->have_posts() ) : ?>
 					<?php while ( $blog->have_posts() ) : $blog->the_post(); ?>
-						<div class="entry-post col-lg-4 col-md-4 col-sm-4 col-xs-12">
+						<div class="entry-post <?php echo $count_posts; ?> col-xs-12">
+							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'page-with-sidebar', array( 'class' => 'img-responsive' ) ); ?></a>
+							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 							<div class="entry-meta">
 								<?php odin_posted_on(); ?>
 							</div><!-- .entry-meta -->
-							<time><?php // the_time( 'd/m/y' ); ?></time>
-							<h5 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 							<?php the_excerpt(); ?>
 						</div>
 					<?php endwhile; ?>
@@ -121,4 +135,58 @@ if ( ! function_exists( 'blog_list_posts_and_related' ) ) {
 			</div><!-- .container -->
 		</section><!-- #blog -->
 	<?php }
+}
+
+// Theme Options - ACF
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Opções do Tema',
+		'menu_title'	=> 'Opções do Tema',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+	/*acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	)); */
+
+}
+
+// Social Media
+if ( ! function_exists( 'social_media' ) ) {
+	/**
+	 * Classes Listing of social media icons.
+	 *
+	 * @since 2.2.0
+	 *
+	 * @return string Classes name.
+	 */
+	function social_media() { ?>
+		<section class="social-media">
+			<?php if( have_rows( 'social_media', 'option' ) ): ?>
+			<nav class="navbar-social-media-navigation">
+				<ul class="nav navbar-nav">
+					<?php while ( have_rows( 'social_media', 'option' ) ) : the_row(); ?>
+					<li class="menu-item">
+						<a href="<?php the_sub_field( 'url_da_rede_social', 'option' ); ?>" target="_blank" style="background: <?php the_sub_field( 'cor_de_fundo', 'option' ); ?>;">
+							<i class="<?php the_sub_field( 'icone_da_rede_social', 'option' ); ?>" aria-hidden="true"></i>
+						</a>
+					</li>
+					<?php endwhile; ?>
+				</ul>
+			</nav>
+			<?php endif; ?>
+		</section>
+		<?php
+	}
 }

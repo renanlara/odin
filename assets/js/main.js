@@ -18,4 +18,16 @@ jQuery(document).ready(function($) {
 	// Tooltip.
 	$( '.odin-tooltip' ).tooltip();
 
+	// Menu Mobile
+	$( '#nav-icon' ).click(function() {
+		$( 'body, html' ).addClass( 'no-scroll' );
+		$( '#header-mobile' ).addClass( 'show-header' );
+
+	});
+
+	$( '#nav-icon-close' ).click(function() {
+		$( 'body, html' ).removeClass( 'no-scroll' );
+		$( '#header-mobile' ).removeClass( 'show-header' );
+	});
+
 });

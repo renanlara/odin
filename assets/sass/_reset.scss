@@ -84,5 +84,42 @@ html {
 }
 
 body {
-    margin-bottom: 70px;
+    font-family: 'Roboto', sans-serif;
+    background: $background;
 }
+
+a {
+	color: $anchor;
+	@include transition(all ease-in-out .2s);
+
+	&:focus,
+	&:hover {
+		text-decoration: none;
+		// color: $green-01 !important;
+		outline: none !important;
+	}
+}
+
+// Scroll Hidden
+.no-scroll {
+	overflow: hidden;
+}
+
+// Facebook Comments - width: 100%;
+.fb-comments, .fb-comments * {
+    width: 100% !important;
+}
+
+#breadcrumbs {
+	text-transform: uppercase;
+
+	a {
+		color: $breadcrumbs-color;
+
+		&:focus,
+		&:hover {
+			color: $breadcrumbs-color-hover;
+		}
+	}
+}
+

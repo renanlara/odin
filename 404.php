@@ -25,6 +25,15 @@ get_header(); ?>
 				</div><!-- .page-content -->
 			</div><!-- .odin_classes_page_full() -->
 		</div><!-- .container -->
+
+		<?php
+		/**
+		 * Listing posts from Blog.
+		 * @param > $subtitle_section, $count_posts, $type_post
+		 *
+		 **/
+			blog_list_posts_and_related( 'Veja o que publicamos em nosso blog', 3, $last_posts );
+		?>
 	</main><!-- #main -->
 
 <?php

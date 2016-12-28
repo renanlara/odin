@@ -17,6 +17,8 @@
 	<?php if ( ! get_option( 'site_icon' ) ) : ?>
 		<link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" rel="shortcut icon" />
 	<?php endif; ?>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<script src="https://use.fontawesome.com/02346b213c.js"></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -61,8 +63,8 @@
 
 			</div><!-- .page-header-->
 
-			<div id="main-navigation" class="navbar navbar-default col-lg-9 col-md-9 col-sm-6 col-xs-6">
-				<nav class="collapse navbar-collapse navbar-main-navigation" role="navigation">
+			<div id="main-navigation" class="navbar navbar-default col-lg-9 col-md-9 hidden-sm hidden-xs">
+				<nav class="navbar-main-navigation" role="navigation">
 					<?php
 						wp_nav_menu(
 							array(
@@ -78,7 +80,45 @@
 				</nav><!-- .navbar-collapse -->
 			</div><!-- #main-navigation-->
 
+			<div id="nav-icon" class="nav-icon pull-right visible-sm visible-xs">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div><!-- #nav-icon -->
+
 		</div><!-- .container-->
 	</header><!-- #header -->
+
+	<header id="header-mobile" class="visible-sm visible-xs">
+		<div class="col-xs-8">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<img src="<?php the_field( 'logotipo_options_theme', 'option' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+			</a>
+		</div>
+
+		<div id="nav-icon-close" class="nav-icon open col-xs-2 pull-right">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<div id="main-navigation-mobile" class="navbar col-xs-12">
+			<nav class="navbar-main-navigation-mobile" role="navigation">
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'main-menu',
+							'depth'          => 2,
+							'container'      => false,
+							'menu_class'     => 'nav navbar-nav',
+							'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
+							'walker'         => new Odin_Bootstrap_Nav_Walker()
+						)
+					);
+				?>
+			</nav><!-- .navbar-collapse -->
+			<?php social_media(); ?>
+		</div><!-- #main-navigation-->
+	</header><!-- #header-mobile -->
 
 	<div id="wrapper">

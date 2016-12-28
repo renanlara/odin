@@ -59,7 +59,14 @@ get_header(); ?>
 
 			</div><!-- .container -->
 
-			<?php blog_list_posts_and_related( 'Você pode gostar também:', 3, $last_posts ); ?>
+			<?php
+			/**
+			 * Listing posts from Blog.
+			 * @param > $subtitle_section, $count_posts, $type_post
+			 *
+			 **/
+				blog_list_posts_and_related( 'Blog', 3, $last_posts );
+			?>
 		</main><!-- #main -->
 
 <?php
