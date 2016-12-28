@@ -64,6 +64,7 @@ add_action( 'admin_notices', 'agile_engine_branding_errors_notice' );
  **/
 add_image_size( 'page-full', 1170, 690, true );
 add_image_size( 'page-with-sidebar', 760, 450, true );
+add_image_size( 'slider', 570, 570, true );
 
 // Replaces the excerpt "Read More" text by a link
 function new_excerpt_more($more) {

@@ -229,6 +229,15 @@ function odin_enqueue_scripts() {
 	wp_enqueue_script( 'html5shiv', $template_url . '/assets/js/html5.js' );
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
+	// Cycle2 plugins
+	wp_enqueue_script( 'cycle2', $template_url . '/assets/js/jquery.cycle2.min.js', array(), null, true );
+	wp_enqueue_script( 'cycle2.carousel', $template_url . '/assets/js/jquery.cycle2.carousel.min.js', array(), null, true );
+	wp_enqueue_script( 'cycle2.scrollVert', $template_url . '/assets/js/jquery.cycle2.scrollVert.min.js', array(), null, true );
+	wp_enqueue_script( 'cycle2.swipe', $template_url . '/assets/js/jquery.cycle2.swipe.min.js', array(), null, true );
+
+	// lightSlider
+	wp_enqueue_script( 'lightslider', $template_url . '/assets/js/lightslider.js', array(), null, true );
+
 	// General scripts.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		// Bootstrap.

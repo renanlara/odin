@@ -1,0 +1,29 @@
+
+// Styles for Home Page
+
+// Showcase / Vitrine
+#showcase {
+	.cycle-slideshow {
+		.slides {
+			width: 100%;
+		}
+
+		.nav-slides {
+			span {
+				display: inline-block;
+				margin: 0 24px 0 0;
+				width: 10px;
+				height: 10px;
+				font-size: 0;
+				background: $black;
+				border-radius: 100%;
+				cursor: pointer;
+				@include transition(all ease-in-out .2s);
+
+				&.cycle-pager-active {
+					// background: $green-01;
+				}
+			}
+		}
+	}
+}
