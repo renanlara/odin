@@ -38,18 +38,14 @@
 				<?php if ( is_home() ) : ?>
 					<h1 class="site-title">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
+							<img class="img-responsive" src="<?php the_field( 'logotipo_options_theme', 'options' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 						</a>
 					</h1>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				<?php else : ?>
 					<div class="site-title h1">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<?php bloginfo( 'name' ); ?>
+							<img class="img-responsive" src="<?php the_field( 'logotipo_options_theme', 'options' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 						</a>
-					</div>
-					<div class="site-description h2">
-						<?php bloginfo( 'description' ); ?>
 					</div>
 				<?php endif ?>
 
