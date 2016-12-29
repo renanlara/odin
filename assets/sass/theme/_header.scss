@@ -2,13 +2,18 @@
 // Header
 // ==========================================================================
 #header {
+	background: $white;
+
 	//
 	// Title, description and image
 	//
 	.agile-engine-branding {
 		margin: 20px 0 20px;
 
-		.site-title {}
+		.site-title {
+			margin: 0;
+		}
+
 		.site-description {
 			font-size: 16px;
 			font-style: italic;
@@ -20,6 +25,8 @@
 	//
 	#main-navigation {
 		margin: 20px 0;
+
+
 	}
 }
 

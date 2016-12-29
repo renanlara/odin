@@ -100,6 +100,12 @@ a {
 	}
 }
 
+@media (min-width: $screen-md-min) {
+	.container {
+		max-width: 1000px;
+	}
+}
+
 // Scroll Hidden
 .no-scroll {
 	overflow: hidden;

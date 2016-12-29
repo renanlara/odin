@@ -18,7 +18,10 @@ get_header(); ?>
 	<main id="content" class="page-default" tabindex="-1" role="main">
 		<main id="content" class="page-default" tabindex="-1" role="main">
 			<div class="container">
-				<?php get_template_part( 'templates/breadcrumb' ); ?>
+				<?php
+					get_template_part( 'templates/breadcrumb' );
+					get_template_part( 'templates/slider' );
+				?>
 
 				<div class="<?php echo odin_classes_page_sidebar(); ?>">
 					<?php

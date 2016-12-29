@@ -59,7 +59,7 @@
 
 			</div><!-- .page-header-->
 
-			<div id="main-navigation" class="navbar navbar-default col-lg-9 col-md-9 hidden-sm hidden-xs">
+			<div id="main-navigation" class="navbar col-lg-9 col-md-9 hidden-sm hidden-xs">
 				<nav class="navbar-main-navigation" role="navigation">
 					<?php
 						wp_nav_menu(
@@ -67,7 +67,7 @@
 								'theme_location' => 'main-menu',
 								'depth'          => 2,
 								'container'      => false,
-								'menu_class'     => 'nav navbar-nav',
+								'menu_class'     => 'nav navbar-nav pull-right',
 								'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
 								'walker'         => new Odin_Bootstrap_Nav_Walker()
 							)
