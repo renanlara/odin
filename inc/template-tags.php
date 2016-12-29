@@ -16,7 +16,7 @@ if ( ! function_exists( 'odin_classes_page_full' ) ) {
 	 * @return string Classes name.
 	 */
 	function odin_classes_page_full() {
-		return 'col-lg-12 col-md-12 col-sm-12 col-xs-12';
+		return 'odin-classes-page-full col-lg-12 col-md-12 col-sm-12 col-xs-12';
 	}
 }
 
@@ -30,7 +30,7 @@ if ( ! function_exists( 'odin_classes_page_sidebar' ) ) {
 	 * @return string Classes name.
 	 */
 	function odin_classes_page_sidebar() {
-		return 'col-lg-8 col-md-8 col-sm-8 col-xs-12';
+		return 'odin-classes-page-sidebar col-lg-8 col-md-8 col-sm-8 col-xs-12';
 	}
 }
 
@@ -44,7 +44,7 @@ if ( ! function_exists( 'odin_classes_page_sidebar_aside' ) ) {
 	 * @return string Classes name.
 	 */
 	function odin_classes_page_sidebar_aside() {
-		return 'col-lg-4 col-md-4 col-sm-4 hidden-xs hidden-print widget-area';
+		return 'odin-classes-page-sidebar-aside col-lg-4 col-md-4 col-sm-4 hidden-xs hidden-print widget-area';
 	}
 }
 

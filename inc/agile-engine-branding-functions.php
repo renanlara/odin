@@ -84,17 +84,12 @@ if ( ! function_exists( 'blog_list_posts_and_related' ) ) {
 	 * @return string Classes name.
 	 * @param > $subtitle_section, $count_posts, $type_post
 	 */
-	// Variables
-	$last_posts = '';
-	$related = array( $post->ID );
-
 	function blog_list_posts_and_related( $subtitle_section, $count_posts, $type_post ) { ?>
 		<section id="blog" class="blog-cards">
 			<div class="container">
 				<header class="entry-header">
 					<h2 class="section-title"><?php echo $subtitle_section; ?></h2>
 				</header>
-
 				<?php
 					$blog = new WP_Query(
 					array(

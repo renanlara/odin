@@ -68,10 +68,10 @@ get_header(); ?>
 		<?php
 		/**
 		 * Listing posts from Blog.
-		 * @param > $subtitle_section, $count_posts, $type_post
+		 * @param > $subtitle_section, $count_posts, $type_post -> array( $post->ID )
 		 *
 		 **/
-			blog_list_posts_and_related( 'Blog', 3, $last_posts );
+			blog_list_posts_and_related( 'Blog', 3, $type_post );
 		?>
 	</main><!-- #main -->
 

@@ -47,6 +47,8 @@ get_header(); ?>
 									endif;
 								?>
 
+								<hr />
+
 								<h3><?php _e( 'Leave your comment!', 'odin' ); ?></h3>
 								<?php comments_template(); ?>
 							</section><!-- #comments-area -->
@@ -62,10 +64,10 @@ get_header(); ?>
 			<?php
 			/**
 			 * Listing posts from Blog.
-			 * @param > $subtitle_section, $count_posts, $type_post
+			 * @param > $subtitle_section, $count_posts, $type_post -> array( $post->ID )
 			 *
 			 **/
-				blog_list_posts_and_related( 'Blog', 3, $last_posts );
+				blog_list_posts_and_related( 'Você poderá gostar também', 3, array( $post->ID ) );
 			?>
 		</main><!-- #main -->
 
