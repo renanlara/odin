@@ -42,14 +42,14 @@ get_header(); ?>
 
 									<?php
 										else : ?>
-										<h3><?php _e( 'Share:', 'odin' ); ?></h3>
+										<h3 class="title-meta"><?php _e( 'Campartilhe:', 'odin' ); ?></h3>
 										<?php echo do_shortcode( $social_warfare );
 									endif;
 								?>
 
 								<hr />
 
-								<h3><?php _e( 'Leave your comment!', 'odin' ); ?></h3>
+								<h4 class="title-meta"><?php _e( 'Deixe o seu comentário!', 'odin' ); ?></h4>
 								<?php comments_template(); ?>
 							</section><!-- #comments-area -->
 					<?php

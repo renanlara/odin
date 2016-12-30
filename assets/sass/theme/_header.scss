@@ -2,6 +2,7 @@
 // Header
 // ==========================================================================
 #header {
+	margin-bottom: 30px;
 	background: $white;
 
 	//
@@ -24,9 +25,25 @@
 	// Navbar
 	//
 	#main-navigation {
-		margin: 20px 0;
+		margin: 36px 0;
 
-
+		// nav
+		.navbar-main-navigation {
+			// ul
+			.navbar-nav {
+				// li
+				.menu-item {
+					a {
+						$padding-menu: 25px;
+						padding-right: $padding-menu;
+						padding-left: $padding-menu;
+						font-weight: 700;
+						font-size: 16px;
+						@include text-transform();
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -37,7 +54,7 @@
 	z-index: 4000;
 	width: 40px;
 	height: 30px;
-	margin: 30px 15px;
+	margin: 46px 15px;
 	position: relative;
 	@include rotate( 0deg );
 	@include transition(all ease-in-out .5s);
@@ -74,6 +91,10 @@
 	top: 24px;
 }
 
+.nav-icon.open span {
+	background: $nav-icon-close;
+}
+
 .nav-icon.open span:nth-child(1) {
 	top: 18px;
 	@include rotate( 135deg );
@@ -107,6 +128,13 @@
 
 	&.show-header {
 		right: 0;
+	}
+
+	.agile-engine-branding {
+		img {
+			-webkit-filter: brightness(0) invert(1);
+  			filter: brightness(0) invert(1);
+		}
 	}
 
 	#main-navigation-mobile {

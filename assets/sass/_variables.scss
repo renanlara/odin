@@ -11,18 +11,21 @@
 // Colors of Visual Identity
 $orange: #e28c30;
 $blue: #495098;
+$grey: #565656;
 
 // Basic Colors
 $black: #000;
 $white: #fff;
 $border: #838383;
+$border-light: #ddd;
 $color: inherit;
 $background: #f1f1f1;
 
 // Colors for Header Mobile
-$nav-icon: $black;
-$bg-header-mobile: $border;
-$cl-link-menu-mobile: $black;
+$nav-icon: $blue;
+$nav-icon-close: $orange;
+$bg-header-mobile: $blue;
+$cl-link-menu-mobile: $orange;
 $bd-menu-mobile: lighten( $bg-header-mobile, 10% );
 
 // Color for All Forms
@@ -38,12 +41,20 @@ $anchor: $orange;
 
 // Buttons Colors
 $btn-aeb-excerpt-color: $white;
-$btn-aeb-excerpt-background: $black;
+$btn-aeb-excerpt-background: $orange;
 
 // Color titles for Pages and Blog
-$h1: $color;
-$h2: $color;
-$h3: $color;
-$h4: $color;
-$h5: $color;
-$h6: $color;
+$h1: $orange;
+$h2: $blue;
+$h3: $grey;
+$h4: $blue;
+$h5: $orange;
+$h6: $blue;
+
+$section-title: $blue;
+// $title-meta:;
+
+// Mixins
+@mixin text-transform() {
+	text-transform: uppercase;
+}

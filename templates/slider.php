@@ -14,14 +14,14 @@
 			    <div class="slides">
 				    	<div class="row">
 				    	<figure class="entry-image col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				    		<?php the_post_thumbnail( 'slider', array( 'class' => 'img-responsive' ) ); ?>
+				    		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'slider', array( 'class' => 'img-responsive' ) ); ?></a>
 				    	</figure>
 		    			<article class="entry-content col-lg-6 col-md-6 col-sm-6 col-xs-12">
 		    				<?php the_title( '<h2 class="entry-title"><a href=" ' . get_permalink($post->ID) . ' ">', '</a></h2>' ); ?>
 				    		<?php the_excerpt(); ?>
 				    		<nav class="nav-slides"></nav>
-				    	</div><!-- .row -->
-			    	</article><!-- .entry-content -->
+				    	</article><!-- .entry-content -->
+				    </div><!-- .row -->
 			    </div><!-- .slides -->
 		    <?php endwhile; ?>
 

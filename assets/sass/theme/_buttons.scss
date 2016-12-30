@@ -12,10 +12,18 @@
 
 .btn-aeb-excerpt {
 	display: inline-block;
-	padding: 8px 10px;
+	padding: 10px 20px;
+	font-weight: 700;
+	@include text-transform();
 	color: $btn-aeb-excerpt-color;
 	background: $btn-aeb-excerpt-background;
 	border-radius: 0;
+
+	&:focus,
+	&:hover {
+		color: $btn-aeb-excerpt-color;
+		background: darken( $btn-aeb-excerpt-background, 10%);
+	}
 }
 
 // Social Media icons

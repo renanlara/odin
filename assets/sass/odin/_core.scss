@@ -5,6 +5,17 @@
 ul.page-numbers {
 	@extend .pagination;
 
+	li {
+		a {
+			color: $orange;
+
+			&:hover,
+			&:focus {
+				color: $orange;
+			}
+		}
+	}
+
 	> li > span.current {
 
 		&,
@@ -12,8 +23,8 @@ ul.page-numbers {
 		&:focus {
 			z-index: 2;
 			color: $pagination-active-color;
-			background-color: $pagination-active-bg;
-			border-color: $pagination-active-bg;
+			background-color: $orange;
+			border-color: $orange;
 			cursor: default;
 		}
 	}

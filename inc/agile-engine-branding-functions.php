@@ -67,11 +67,21 @@ add_image_size( 'page-with-sidebar', 760, 450, true );
 add_image_size( 'slider', 570, 570, true );
 
 // Replaces the excerpt "Read More" text by a link
-function new_excerpt_more($more) {
-       global $post;
-	return '...</p><p><a class="btn btn-aeb-excerpt" href="'. get_permalink($post->ID) . '">Leia Mais</a></p>';
+function new_excerpt_more( $more ) {
+    global $post;
+	return '...</p><a class="btn btn-aeb-excerpt" href="' . get_permalink($post->ID) . '">Leia Mais</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
+* @param $length
+* @return int
+*/
+
+function custom_excerpt_length( $length ) {
+	return 15;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // Listing posts from Blog
 if ( ! function_exists( 'blog_list_posts_and_related' ) ) {
@@ -144,17 +154,17 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false
 	));
 
-	/*acf_add_options_sub_page(array(
+	/* acf_add_options_sub_page(array(
 		'page_title' 	=> 'Theme Header Settings',
 		'menu_title'	=> 'Header',
 		'parent_slug'	=> 'theme-general-settings',
-	));
+	)); */
 
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Theme Footer Settings',
 		'menu_title'	=> 'Footer',
 		'parent_slug'	=> 'theme-general-settings',
-	)); */
+	));
 
 }
 
@@ -167,8 +177,8 @@ if ( ! function_exists( 'social_media' ) ) {
 	 *
 	 * @return string Classes name.
 	 */
-	function social_media() { ?>
-		<section class="social-media">
+	function social_media( $side ) { ?>
+		<section class="social-media pull-<?php echo $side; ?>">
 			<?php if( have_rows( 'social_media', 'option' ) ): ?>
 			<nav class="navbar-social-media-navigation">
 				<ul class="nav navbar-nav">

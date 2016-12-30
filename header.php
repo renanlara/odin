@@ -31,62 +31,63 @@
 
 	<header id="header" role="banner">
 		<div class="container">
-			<div class="agile-engine-branding col-lg-3 col-md-3 col-sm-6 col-xs-6">
+			<div class="row">
+				<div class="agile-engine-branding col-lg-3 col-md-3 col-sm-6 col-xs-6">
+					<?php odin_the_custom_logo(); ?>
 
-				<?php odin_the_custom_logo(); ?>
+					<?php if ( is_home() ) : ?>
+						<h1 class="site-title">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+								<img class="img-responsive" src="<?php the_field( 'logotipo_options_theme', 'options' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+							</a>
+						</h1>
+					<?php else : ?>
+						<div class="site-title h1">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+								<img class="img-responsive" src="<?php the_field( 'logotipo_options_theme', 'options' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+							</a>
+						</div>
+					<?php endif ?>
 
-				<?php if ( is_home() ) : ?>
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<img class="img-responsive" src="<?php the_field( 'logotipo_options_theme', 'options' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-						</a>
-					</h1>
-				<?php else : ?>
-					<div class="site-title h1">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<img class="img-responsive" src="<?php the_field( 'logotipo_options_theme', 'options' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-						</a>
-					</div>
-				<?php endif ?>
+					<?php if ( get_header_image() ) : ?>
+						<div class="custom-header">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+							</a>
+						</div>
+					<?php endif; ?>
+				</div><!-- .page-header-->
 
-				<?php if ( get_header_image() ) : ?>
-					<div class="custom-header">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-						</a>
-					</div>
-				<?php endif; ?>
+				<div id="main-navigation" class="navbar col-lg-9 col-md-9 hidden-sm hidden-xs">
+					<?php social_media( 'right' ); ?>
+					<nav class="navbar-main-navigation" role="navigation">
+						<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'main-menu',
+									'depth'          => 2,
+									'container'      => false,
+									'menu_class'     => 'nav navbar-nav pull-right',
+									'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
+									'walker'         => new Odin_Bootstrap_Nav_Walker()
+								)
+							);
+						?>
+					</nav><!-- .navbar-collapse -->
+				</div><!-- #main-navigation-->
 
-			</div><!-- .page-header-->
+				<div id="nav-icon" class="nav-icon pull-right visible-sm visible-xs">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div><!-- #nav-icon -->
 
-			<div id="main-navigation" class="navbar col-lg-9 col-md-9 hidden-sm hidden-xs">
-				<nav class="navbar-main-navigation" role="navigation">
-					<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'main-menu',
-								'depth'          => 2,
-								'container'      => false,
-								'menu_class'     => 'nav navbar-nav pull-right',
-								'fallback_cb'    => 'Odin_Bootstrap_Nav_Walker::fallback',
-								'walker'         => new Odin_Bootstrap_Nav_Walker()
-							)
-						);
-					?>
-				</nav><!-- .navbar-collapse -->
-			</div><!-- #main-navigation-->
-
-			<div id="nav-icon" class="nav-icon pull-right visible-sm visible-xs">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div><!-- #nav-icon -->
-
+			</div><!-- .row -->
 		</div><!-- .container-->
 	</header><!-- #header -->
 
 	<header id="header-mobile" class="visible-sm visible-xs">
-		<div class="col-xs-8">
+		<div class="agile-engine-branding col-xs-8">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 				<img src="<?php the_field( 'logotipo_options_theme', 'option' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 			</a>

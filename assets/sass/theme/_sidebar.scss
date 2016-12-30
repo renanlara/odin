@@ -1,4 +1,38 @@
 // ==========================================================================
 // Sidebar
 // ==========================================================================
-#sidebar {}
+#sidebar {
+	.widget {
+		margin-bottom: 30px;
+		padding: 20px 30px 30px;
+		background: $white;
+
+		.widget-title {
+			color: $orange;
+		}
+
+		ul, ol {
+			padding: 0;
+			color: $blue;
+			list-style: none;
+
+			li {
+				border-bottom: 1px solid $border-light;
+
+				&:last-child {
+					border-bottom: none;
+
+					a {
+						padding-bottom: 0;
+					}
+				}
+
+				a {
+					display: block;
+					padding: 20px 15px;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
