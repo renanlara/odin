@@ -8,13 +8,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-post' ); ?>>
-	<?php
-		if ( is_page( $page ) ) :
-			echo '<header class="entry-header">' . $custom_term->name; . '</h1></header><!-- .entry-header -->';
-		else:
-			the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' );
-		endif;
-	?>
+	<?php the_title( '<header class="entry-header"><h1 class="entry-title">', '</h1></header><!-- .entry-header -->' ); ?>
 
 	<div class="entry-content">
 		<?php
