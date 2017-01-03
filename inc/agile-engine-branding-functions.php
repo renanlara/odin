@@ -2,7 +2,7 @@
 
 // Alert for plugins not installeds or not actives
 function agile_engine_branding_errors_notice() {
-	$defaul_message_plugin_not_installed = __( 'não está instalado. Instale ou Ative o plugin.', 'odin' );
+	$defaul_message_plugin_not_installed = __( 'não está instalado. Instale ou ative o plugin.', 'odin' );
 	// The is_plugin_active() function is only included by default in the admin,
 	// load it on the front-end too if needed.
 	if ( ! function_exists('is_plugin_active') ) {
@@ -29,14 +29,6 @@ function agile_engine_branding_errors_notice() {
 	if ( ! is_plugin_active( 'contact-form-7-to-database-extension/contact-form-7-db.php' ) ) { ?>
 	    <div class="notice notice-error is-dismissible">
 	        <p><a href="<?php echo admin_url( 'plugin-install.php?s=Contact+Form+DB&tab=search&type=term', 'http' ); ?>"><?php _e( 'Contact Form DB', 'odin' ); ?></a> <?php echo $defaul_message_plugin_not_installed; ?></p>
-	    </div>
-	    <?php
-	}
-
-	// Custom Post Type UI
-	if ( ! is_plugin_active( 'custom-post-type-ui/custom-post-type-ui.php' ) ) { ?>
-	    <div class="notice notice-error is-dismissible">
-	        <p><a href="<?php echo admin_url( 'plugin-install.php?s=Custom+Post+Type+UI&tab=search&type=term', 'http' ); ?>"><?php _e( 'Custom Post Type UI', 'odin' ); ?></a> <?php echo $defaul_message_plugin_not_installed; ?></p>
 	    </div>
 	    <?php
 	}
@@ -158,13 +150,13 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' 	=> 'Theme Header Settings',
 		'menu_title'	=> 'Header',
 		'parent_slug'	=> 'theme-general-settings',
-	)); */
+	));
 
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Theme Footer Settings',
 		'menu_title'	=> 'Footer',
 		'parent_slug'	=> 'theme-general-settings',
-	));
+	)); */
 
 }
 
@@ -178,7 +170,7 @@ if ( ! function_exists( 'social_media' ) ) {
 	 * @return string Classes name.
 	 */
 	function social_media( $side ) { ?>
-		<section class="social-media pull-<?php echo $side; ?>">
+		<section class="social-media <?php echo $side; ?>">
 			<?php if( have_rows( 'social_media', 'option' ) ): ?>
 			<nav class="navbar-social-media-navigation">
 				<ul class="nav navbar-nav">
