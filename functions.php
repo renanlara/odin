@@ -357,14 +357,6 @@ function agile_engine_branding_errors_notice() {
 	    <?php
 	}
 
-	// Contact Form DB
-	if ( ! is_plugin_active( 'contact-form-7-to-database-extension/contact-form-7-db.php' ) ) { ?>
-	    <div class="notice notice-error is-dismissible">
-	        <p><a href="<?php echo admin_url( 'plugin-install.php?s=Contact+Form+DB&tab=search&type=term', 'http' ); ?>"><?php _e( 'Contact Form DB', 'odin' ); ?></a> <?php echo $defaul_message_plugin_not_installed; ?></p>
-	    </div>
-	    <?php
-	}
-
 	// Yoast SEO
 	if ( ! is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) { ?>
 	    <div class="notice notice-error is-dismissible">
@@ -373,13 +365,6 @@ function agile_engine_branding_errors_notice() {
 	    <?php
 	}
 
-	// Social Warfare
-	if ( ! is_plugin_active( 'social-warfare/social-warfare.php' ) ) { ?>
-	    <div class="notice notice-error is-dismissible">
-	        <p><a href="<?php echo admin_url( 'plugin-install.php?s=Social+Warfare&tab=search&type=term', 'http' ); ?>"><?php _e( 'Social Warfare', 'odin' ); ?></a> <?php echo $defaul_message_plugin_not_installed; ?></p>
-	    </div>
-	    <?php
-	}
 }
 add_action( 'admin_notices', 'agile_engine_branding_errors_notice' );
 
