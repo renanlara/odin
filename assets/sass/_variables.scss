@@ -9,23 +9,23 @@
 // $brand-primary: blueviolet;
 
 // Colors of Visual Identity
-$orange: #e28c30;
-$blue: #495098;
-$grey: #565656;
+$visual-identity-01: #e28c30;
+$visual-identity-02: #495098;
 
 // Basic Colors
 $black: #000;
 $white: #fff;
+$grey: #565656;
 $border: #838383;
 $border-light: #ddd;
 $color: inherit;
 $background: #f1f1f1;
 
 // Colors for Header Mobile
-$nav-icon: $blue;
-$nav-icon-close: $orange;
-$bg-header-mobile: $blue;
-$cl-link-menu-mobile: $orange;
+$nav-icon: $visual-identity-02;
+$nav-icon-close: $visual-identity-01;
+$bg-header-mobile: $visual-identity-02;
+$cl-link-menu-mobile: $visual-identity-01;
 $bd-menu-mobile: lighten( $bg-header-mobile, 10% );
 
 // Color for All Forms
@@ -37,21 +37,21 @@ $breadcrumbs-color: $color;
 $breadcrumbs-color-hover: $color;
 
 // Anchor colors all
-$anchor: $orange;
+$anchor: $visual-identity-01;
 
 // Buttons Colors
 $btn-aeb-excerpt-color: $white;
-$btn-aeb-excerpt-background: $orange;
+$btn-aeb-excerpt-background: $visual-identity-01;
 
 // Color titles for Pages and Blog
-$h1: $orange;
-$h2: $blue;
+$h1: $visual-identity-01;
+$h2: $visual-identity-02;
 $h3: $grey;
-$h4: $blue;
-$h5: $orange;
-$h6: $blue;
+$h4: $visual-identity-02;
+$h5: $visual-identity-01;
+$h6: $visual-identity-02;
 
-$section-title: $blue;
+$section-title: $visual-identity-02;
 // $title-meta:;
 
 // Mixins

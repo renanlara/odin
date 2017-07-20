@@ -7,11 +7,11 @@ ul.page-numbers {
 
 	li {
 		a {
-			color: $orange;
+			color: $visual-identity-01;
 
 			&:hover,
 			&:focus {
-				color: $orange;
+				color: $visual-identity-01;
 			}
 		}
 	}
@@ -23,8 +23,8 @@ ul.page-numbers {
 		&:focus {
 			z-index: 2;
 			color: $pagination-active-color;
-			background-color: $orange;
-			border-color: $orange;
+			background-color: $visual-identity-01;
+			border-color: $visual-identity-01;
 			cursor: default;
 		}
 	}

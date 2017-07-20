@@ -32,7 +32,7 @@
 	<header id="header" role="banner">
 		<div class="container">
 			<div class="row">
-				<div class="agile-engine-branding col-lg-3 col-md-3 col-sm-6 col-xs-6">
+				<div class="brand-header col-lg-3 col-md-3 col-sm-6 col-xs-6">
 					<?php odin_the_custom_logo(); ?>
 
 					<?php if ( is_home() ) : ?>

@@ -4,7 +4,7 @@
 // Showcase / Vitrine
 #showcase {
 	margin-bottom: 30px;
-	background: $blue;
+	background: $visual-identity-02;
 
 	.cycle-slideshow {
 		.slides {
@@ -45,7 +45,7 @@
 				@include transition(all ease-in-out .2s);
 
 				&.cycle-pager-active {
-					background: $orange;
+					background: $visual-identity-01;
 				}
 			}
 		}

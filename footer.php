@@ -15,7 +15,7 @@
 
 	<footer id="footer" role="contentinfo">
 		<div class="container">
-			<div class="podocenter col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			<div class="brand-footer col-lg-3 col-md-3 col-sm-3 col-xs-12">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					<img class="img-responsive" src="<?php the_field( 'logotipo_options_theme', 'options' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 				</a>
@@ -42,9 +42,6 @@
 						echo do_shortcode( $contact_form_7 );
 					?>
 				</div>
-				<a href="http://agenciaagile.com.br/" target="_blank" title="Agência Agile - Marketing de Resultados">
-					<img class="agencia-agile pull-right" src="<?php echo get_template_directory_uri(); ?>/assets/images/agenciaagile.png" alt="Agência Agile - Marketing de Resultados">
-				</a>
 			</div><!-- .footer-itens -->
 		</div><!-- .container -->
 	</footer><!-- #footer -->

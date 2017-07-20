@@ -107,7 +107,7 @@ a {
 	&:focus,
 	&:hover {
 		text-decoration: none;
-		color: $blue;
+		color: $visual-identity-02;
 		outline: none !important;
 	}
 }
@@ -118,7 +118,7 @@ hr {
 
 .nav > li > a:hover, .nav > li > a:focus {
 	color: $white;
-	background-color: $blue;
+	background-color: $visual-identity-02;
 }
 
 // Scroll Hidden
