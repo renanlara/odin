@@ -9,8 +9,8 @@
 // $brand-primary: blueviolet;
 
 // Colors of Visual Identity
-$visual-identity-01: #e28c30;
-$visual-identity-02: #495098;
+$visual-identity-01: #d3342e;
+$visual-identity-02: #24292e;
 
 // Basic Colors
 $black: #000;
@@ -19,6 +19,7 @@ $grey: #565656;
 $border: #838383;
 $border-light: #ddd;
 $color: inherit;
+$body: inherit;
 $background: #f1f1f1;
 
 // Colors for Header Mobile
@@ -53,8 +54,3 @@ $h6: $visual-identity-02;
 
 $section-title: $visual-identity-02;
 // $title-meta:;
-
-// Mixins
-@mixin text-transform() {
-	text-transform: uppercase;
-}

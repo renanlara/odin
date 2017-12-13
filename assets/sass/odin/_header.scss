@@ -38,8 +38,7 @@
 						padding-right: $padding-menu;
 						padding-left: $padding-menu;
 						font-weight: 700;
-						font-size: 16px;
-						@include text-transform();
+						text-transform: uppercase;
 					}
 				}
 			}

@@ -14,7 +14,7 @@
 	display: inline-block;
 	padding: 10px 20px;
 	font-weight: 700;
-	@include text-transform();
+	text-transform: uppercase;
 	color: $btn-aeb-excerpt-color;
 	background: $btn-aeb-excerpt-background;
 	border-radius: 0;
